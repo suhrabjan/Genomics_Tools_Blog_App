@@ -25,11 +25,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
+    path('', genome_views.home, name='app-home'),
     path('translation/', genome_views.translate, name='translation'),
     path('transcription/', genome_views.transcribe, name='transcription'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),  # normally it searches for template in registration folder therefore we are telling to look at users folder template.
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),  # normally it searches for template in registration folder therefore we are telling to look at users folder template.
-    path('', include('genome_functionalities.urls')),
+    # path('', include('genome_functionalities.urls')),
     path('', include('blog.urls')),
     path('password-reset/', auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'), name='password_reset'),  # normally it searches for template in registration folder therefore we are telling to look at users folder template.
     path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),  # normally it searches for template in registration folder therefore we are telling to look at users folder template.
