@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY_GENOME')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'genomics-tools-app.herokuapp.com', 'http://127.0.0.1:8000/profile/']
 
@@ -146,6 +146,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 
 STATICFILES_LOCATION = 'static/'
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 MEDIAFILES_LOCATION = 'media/'

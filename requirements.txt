@@ -9,6 +9,5 @@ whitenoise==4.1
 psycopg2==2.7.5
 psycopg2-binary==2.7.5
 boto3==1.9.56
-botocore==1.12.56
 django-storages==1.7.1
 s3transfer==0.1.13
