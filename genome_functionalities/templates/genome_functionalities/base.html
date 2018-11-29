@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block content0 %}
+    {% endblock %}
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans:100|Poppins|Poppins:100,200,300|Varela+Round|Lato:300|Lato:700|Exo:100,200,300,400|Oxygen:300">
+    <link rel="stylesheet" href="{% static 'genome_functionalities/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body>
+    <canvas id="bgd-anime"></canvas>
+    <div class="site-container">
+        <header class="site-header">
+            <hr>
+            <div class="about">
+                <ul class="about-social">
+                    <li class="left"><a class="fas fa-home" href="{% url 'app-home' %}"></a></li>
+                    <li class="left verticalline"><a href="{% url 'app-blog' %}">
+                    Genome-Blog</a></li>
+                    {% if user.is_authenticated %}
+                        <li class="right verticalline"><a href="{% url 'profile' %}">Profile</a></li>
+                        <li class="right verticalline"><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                        <li class="right verticalline"><a href="{% url 'login' %}">Login</a></li>
+                        <li class="right verticalline"><a href="{% url 'register' %}">Register</a></li>
+                    {% endif %}
+
+
+                </ul>
+            </div>
+            <nav id="menu">
+                <a id="hamburger" class="fas fa-bars" href="#"></a>
+                <ul class="toggle">
+                    <li><a class="funcs" href="{% url 'app-home' %}">Reverse Complement</a></li>
+                    <li><a class="funcs" href="{% url 'transcription' %}">DNA to RNA</a></li>
+                    <li><a class="funcs" href="{% url 'translation' %}">RNA to Protein</a></li>
+                    <li><a class="funcs" href="#">Nuclotide Stats</a></li>
+                    <li><a class="funcs" href="#">Primer Design</a></li>
+                </ul>
+            </nav>
+            {% block content1 %}
+            {% endblock %}
+        </header>
+        {% block content2 %}
+        {% endblock %}
+    </div>
+    <script src="{% static 'genome_functionalities/background.js' %}"></script>
+    <script>
+        const hamb = document.querySelector('#hamburger')
+        const menu = document.querySelector('.toggle');
+        function navbar(e) {
+            if (menu.style.opacity === "") {
+                menu.style.opacity = '1';
+                menu.style.top = 'unset';
+                menu.style.marginTop = '50px';
+                menu.style.background = '#5f788a'
+            } else if (menu.style.opacity === "1") {
+                menu.style.opacity = '';
+                menu.style.top = '-9999px';
+            }
+        }
+        hamb.addEventListener('click', navbar);
+    </script>
+    {% block content3 %}
+    {% endblock %}
+</body>
+</html>

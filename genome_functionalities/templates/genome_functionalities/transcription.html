@@ -1,0 +1,37 @@
+{% extends "genome_functionalities/base.html" %}
+{% load static %}
+{% block content0 %}
+    <title>Transcription Tool</title>
+{% endblock content0 %}
+
+{% block content1 %}
+    <h1>Transcription</h1>
+{% endblock content1 %}
+
+{% block content2 %}
+    <main>
+        <div class="description">
+            <p>In molecular biology and genetics, <a class="translation-link" href="https://www.khanacademy.org/science/biology/gene-expression-central-dogma/transcription-of-dna-into-rna/a/stages-of-transcription" target="_blank"><strong>transcription</strong></a> is the process of copying (transcribing) DNA to an RNA, especially messenger RNA (mRNA) by the enzyme RNA polymerase.</p>
+            <img class="dna-rna1" src="{% static 'genome_functionalities/media/transcription.png' %}" alt="rna-protein">
+            <img class="dna-rna2" src="{% static 'genome_functionalities/media/transcription2.png' %}" alt="rna-protein">
+            <ul style="padding-left: 0; list-style-type: asterisks;">
+                <li style="display: block; font-size: 17px; list-style: disc;">Transcription begins when RNA polymerase binds to a promoter sequence near the beginning of a gene.</li>
+                <li style="display: block; font-size: 17px;">RNA polymerase uses one of the DNA strands (the template strand) as a template to make a new, complementary RNA molecule.</li>
+                <li style="display: block; font-size: 17px;">RNA polymerase incorporates A, U, G, C nucleotides for T, A, C, G on DNA template, respectively.</li>
+            </ul>
+            <br>
+        </div>
+        <div id="input-box">
+            <form id="seq-input" action="" method="get">
+                <small>Please enter your DNA Template Sequence here.</small>
+                <textarea name="sequence" placeholder="Enter your sequence here" cols="130" rows="15"></textarea>
+                <button type="submit" name="submit">Submit</button>
+                <button type="reset" name="Reset">Clear</button>
+            </form>
+        </div>
+    </main>
+{% endblock content2 %}
+
+{% block content3 %}
+    <script src="{% static 'genome_functionalities/transcription.js' %}"></script>
+{% endblock content3 %}

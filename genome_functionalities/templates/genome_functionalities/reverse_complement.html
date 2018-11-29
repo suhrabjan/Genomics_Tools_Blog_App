@@ -1,0 +1,35 @@
+{% extends "genome_functionalities/base.html" %}
+{% load static %}
+{% block content0 %}
+    <title>Reverse Complement</title>
+{% endblock content0 %}
+
+{% block content1 %}
+    <h1>Reverse Complement Tool</h1>
+{% endblock content1 %}
+
+{% block content2 %}
+    <main>
+        <div class="description">
+            <p>Reverse Complement converts a DNA sequence into its reverse, complement, or reverse-complement counterpart. You may want to work with the reverse-complement of a sequence if it contains an ORF on the reverse strand.</p>
+            <br>
+        </div>
+        <div id="input-box">
+            <form id="seq-input" action="" method="get">
+                <span>Paste the raw or FASTA sequence into the text area below.</span>
+                <select name="function">
+                    <option value="reverse-complement">Reverse Complement</option>
+                    <option value="reverse">Reverse</option>
+                    <option value="complement">Complement</option>
+                </select>
+                <textarea name="sequence" placeholder="Enter your sequence here" cols="130" rows="15"></textarea>
+                <button type="submit" name="submit">Submit</button>
+                <button type="reset" name="Reset">Clear</button>
+            </form>
+        </div>
+    </main>
+{% endblock content2 %}
+
+{% block content3 %}
+    <script src="{% static 'genome_functionalities/reverse_complement.js' %}"></script>
+{% endblock content3 %}
