@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY_GENOME')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'genomics-tools-app.herokuapp.com', 'http://127.0.0.1:8000/profile/']
 
