@@ -1,0 +1,126 @@
+{% extends "genome_functionalities/base.html" %}
+{% load static %}
+{% block content0 %}
+    <title>Restriction Enzymes</title>
+{% endblock content0 %}
+
+{% block content1 %}
+    <h1>Restriction Site Locator</h1>
+{% endblock content1 %}
+
+{% block content2 %}
+    <main>
+        <div class="description">
+            <p>Reverse Complement converts a DNA sequence into its reverse, complement, or reverse-complement counterpart. You may want to work with the reverse-complement of a sequence if it contains an ORF on the reverse strand.</p>
+            <br>
+        </div>
+        <div id="input-box">
+            <form id="seq-input" action="" method="get">
+                <span>Paste the raw or FASTA sequence into the text area below.</span>
+                <span>Please select Restriction Enzyme you are interested at.</span>
+                <select name="function">
+                    <option value="AatII">AatII</option>
+                    <option value="Acc65I">Acc65I</option>
+                    <option value="AccI">AccI</option>
+                    <option value="AclI">AclI</option>
+                    <option value="AatII">AatII</option>
+                    <option value="Acc65I">Acc65I</option>
+                    <option value="AccI">AccI</option>
+                    <option value="AclI">AclI</option>
+                    <option value="AfeI">AfeI</option>
+                    <option value="AflII">AflII</option>
+                    <option value="AgeI">AgeI</option>
+                    <option value="ApaI">ApaI</option>
+                    <option value="ApaLI">ApaLI</option>
+                    <option value="ApoI">ApoI</option>
+                    <option value="AscI">AscI</option>
+                    <option value="AseI">AseI</option>
+                    <option value="AsiSI">AsiSI</option>
+                    <option value="AvrII">AvrII</option>
+                    <option value="BamHI">BamHI</option>
+                    <option value="BclI">BclI</option>
+                    <option value="BglII">BglII</option>
+                    <option value="Bme1580I">Bme1580I</option>
+                    <option value="BmtI">BmtI</option>
+                    <option value="BsaHI">BsaHI</option>
+                    <option value="BsiEI">BsiEI</option>
+                    <option value="BsiWI">BsiWI</option>
+                    <option value="BspEI">BspEI</option>
+                    <option value="BspHI">BspHI</option>
+                    <option value="BsrGI">BsrGI</option>
+                    <option value="BssHII">BssHII</option>
+                    <option value="BstBI">BstBI</option>
+                    <option value="BstZ17I">BstZ17I</option>
+                    <option value="BtgI">BtgI</option>
+                    <option value="ClaI">ClaI</option>
+                    <option value="DraI">DraI</option>
+                    <option value="EaeI">EaeI</option>
+                    <option value="EagI">EagI</option>
+                    <option value="EcoRI">EcoRI</option>
+                    <option value="EcoRV">EcoRV</option>
+                    <option value="FseI">FseI</option>
+                    <option value="FspI">FspI</option>
+                    <option value="HaeII">HaeII</option>
+                    <option value="HincII">HincII</option>
+                    <option value="HindIII">HindIII</option>
+                    <option value="HpaI">HpaI</option>
+                    <option value="KasI">KasI</option>
+                    <option value="KpnI">KpnI</option>
+                    <option value="MfeI">MfeI</option>
+                    <option value="MluI">MluI</option>
+                    <option value="MscI">MscI</option>
+                    <option value="MspA1I">MspA1I</option>
+                    <option value="MfeI">MfeI</option>
+                    <option value="MluI">MluI</option>
+                    <option value="MscI">MscI</option>
+                    <option value="MspA1I">MspA1I</option>
+                    <option value="NaeI">NaeI</option>
+                    <option value="NarI">NarI</option>
+                    <option value="NcoI">NcoI</option>
+                    <option value="NdeI">NdeI</option>
+                    <option value="NgoMIV">NgoMIV</option>
+                    <option value="NheI">NheI</option>
+                    <option value="NotI">NotI</option>
+                    <option value="NruI">NruI</option>
+                    <option value="NsiI">NsiI</option>
+                    <option value="NspI">NspI</option>
+                    <option value="PacI">PacI</option>
+                    <option value="PciI">PciI</option>
+                    <option value="PmeI">PmeI</option>
+                    <option value="PmlI">PmlI</option>
+                    <option value="PsiI">PsiI</option>
+                    <option value="PspOMI">PspOMI</option>
+                    <option value="PstI">PstI</option>
+                    <option value="PvuI">PvuI</option>
+                    <option value="PvuII">PvuII</option>
+                    <option value="SacI">SacI</option>
+                    <option value="SacII">SacII</option>
+                    <option value="SalI">SalI</option>
+                    <option value="SbfI">SbfI</option>
+                    <option value="ScaI">ScaI</option>
+                    <option value="SfcI">SfcI</option>
+                    <option value="SfoI">SfoI</option>
+                    <option value="SgrAI">SgrAI</option>
+                    <option value="SmaI">SmaI</option>
+                    <option value="SmlI">SmlI</option>
+                    <option value="SnaBI">SnaBI</option>
+                    <option value="SpeI">SpeI</option>
+                    <option value="SphI">SphI</option>
+                    <option value="SspI">SspI</option>
+                    <option value="StuI">StuI</option>
+                    <option value="SwaI">SwaI</option>
+                    <option value="XbaI">XbaI</option>
+                    <option value="XhoI">XhoI</option>
+                    <option value="XmaI">XmaI</option>
+                </select>
+                <textarea name="sequence" placeholder="Enter your sequence here" cols="130" rows="15"></textarea>
+                <button type="submit" name="submit">Submit</button>
+                <button type="reset" name="Reset">Clear</button>
+            </form>
+        </div>
+    </main>
+{% endblock content2 %}
+
+{% block content3 %}
+    <script src="{% static 'genome_functionalities/restriction.js' %}"></script>
+{% endblock content3 %}

@@ -13,3 +13,7 @@ def translate(request):
 
 def transcribe(request):
     return render(request, 'genome_functionalities/transcription.html')
+
+
+def restrict(request):
+    return render(request, 'genome_functionalities/restriction_enzymes.html')

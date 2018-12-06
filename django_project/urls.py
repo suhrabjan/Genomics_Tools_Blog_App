@@ -26,6 +26,7 @@ urlpatterns = [
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
     path('', genome_views.home, name='app-home'),
+    path('restriction/', genome_views.restrict, name='restriction'),
     path('translation/', genome_views.translate, name='translate'),
     path('transcription/', genome_views.transcribe, name='transcribe'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),  # normally it searches for template in registration folder therefore we are telling to look at users folder template.
